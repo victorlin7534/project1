@@ -1,14 +1,14 @@
-default: my_tunes.o tune.o art.o
-	gcc -o test my_tunes.o tune.o
+default: my_tunes.o tune.o lib.o
+	gcc -o test my_tunes.o tune.o lib.o
 
-my_tunes.o: my_tunes.c tune.h art.h
+my_tunes.o: my_tunes.c tune.h lib.h
 	gcc -c my_tunes.c
 
 tune.o: tune.c tune.h
 	gcc -c tune.c
 
-art.o: art.c art.h
-	gcc -c art.c
+lib.o: lib.c lib.h
+	gcc -c lib.c
 
 run:
 	./test
