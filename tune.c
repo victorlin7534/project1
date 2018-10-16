@@ -6,34 +6,39 @@
 
 struct song *  add_song(char *name, char *artist,struct song *cur){
   struct song * new = (struct song*)malloc(sizeof(struct song));
-  new->artist = artist;
-  new->name = name;
+  strncpy(new->artist,artist,sizeof(artist));
+  strncpy(new->name,name,sizeof(name));
   int i=0;
   while(cur){
     if(strcmp(artist,cur->artist)>0 && strcmp(name,cur->name)>0)
       break;
     cur++;i++;
   }
-  if(i){
-    new->next=cur;
-  }
-  (cur-1)->next = new;
   new->next=cur;
-  return
+  if(i)
+    return new;
+  (cur-1)->next = new;
+  return cur-i;
 }
 
 void show_songs(struct artist *cur){
   int i;
-  for(i=0;cur;cur++)
+  for(i=0;cur;cur=cur->next)
     printf("%d) %s by %s\n",i,cur->name,cur->artist);
 }
 
-void clear_songs(){
-  
+struct song *  clear_songs(struct artist *cur){
+  struct node * temp;
+  while(cur){
+    temp = cur->next;
+    free(cur);
+    cur = temp;
+  }
+  return cur;
 }
 
-void remove_song(){
-
+struct song * remove_song(struct artist *cur, char *name){
+  
 }
 
 struct song * shuffle(){
