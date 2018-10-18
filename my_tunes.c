@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include "lib.h"
 #include "tune.h"
+#include <time.h>
 
 int main(){
-  struct artist * library[27];
+  srand(time(NULL));
+  struct song * library[27];
   return 0;
 }
