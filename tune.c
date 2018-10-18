@@ -23,9 +23,9 @@ struct song *  add_song(char *name, char *artist,struct song *cur){
     cur=cur->next;
   }
   new->next=cur;
-  if(follow == NULL)
+  if(!follow)
     return new;
-  if(cur != NULL){
+  if(cur){
     if (strcmp(follow->artist,cur->artist)==0 && strcmp(follow->name,cur->name)==0)
       return new;
   }
