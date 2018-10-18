@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "lib.h"
 #include "tune.h"
+#include "lib.h"
 
 void clear(struct song * library[]){
 
@@ -36,5 +36,5 @@ struct song * fsong(){
 }
 
 void add(){
-	
+
 }
