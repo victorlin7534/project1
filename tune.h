@@ -1,8 +1,8 @@
 #ifndef TUNE_H
 #define TUNE_H
 struct song{ 
-  char name[50];
-  char artist[50];
+  char name[509];
+  char artist[500];
   struct song *next;
 };
 struct song * add_song(char *name, char *artist,struct song *cur);

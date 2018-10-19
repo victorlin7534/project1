@@ -8,8 +8,8 @@ struct song *  add_song(char *name, char *artist,struct song *cur){
   struct song * new = (struct song*)malloc(sizeof(struct song));
   struct song * follow = cur;
   struct song * head = cur;
-  strncpy(new->artist,artist,sizeof(artist));
-  strncpy(new->name,name,sizeof(name));
+  strncpy(new->artist,artist,sizeof(artist)+1);
+  strncpy(new->name,name,sizeof(name)+1);
   while(cur){
     if(strcmp(artist,cur->artist)==0&&strcmp(name,cur->name)==0){
       printf("this song is already in the list\n");
@@ -35,16 +35,17 @@ struct song *  add_song(char *name, char *artist,struct song *cur){
 
 void show_songs(struct song *cur){
   int i;
-  for(i=1;!cur;cur=cur->next,i++)
-    printf("%d) %s by %s\n",i,cur->name,cur->artist);
+  for(i=1;cur;cur=cur->next,i++)
+    printf("\t%d) %s by %s\n",i,cur->name,cur->artist);
 }
 
 void showa_songs(struct song *cur, char *artist){
   int i=1;
   while(cur){
     if(strcmp(cur->artist,artist)==0)
-      printf("%d) %s by %s\n",i,cur->name,cur->artist);
+      printf("\t%d) %s by %s\n",i,cur->name,cur->artist);
       i++;
+    cur = cur->next;
   }
 }
 
@@ -79,8 +80,9 @@ struct song * remove_song(struct song *cur, char *name, char *artist){
 }
 
 struct song * shuffle_songs(struct song *cur){
+  struct song * give = cur;
   while(cur){
-    if((rand()%10)%2==0)
+    if((rand()%25)%4==0)
       break;
     cur=cur->next;
   }
