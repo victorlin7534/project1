@@ -8,8 +8,8 @@ struct song *  add_song(char *name, char *artist,struct song *cur){
   struct song * new = (struct song*)malloc(sizeof(struct song));
   struct song * follow = cur;
   struct song * head = cur;
-  strncpy(new->artist,artist,sizeof(artist)+1); // WEIRD
-  strncpy(new->name,name,sizeof(name)+1);
+  strcpy(new->artist,artist); 
+  strcpy(new->name,name);
   while(cur){
     if(strcmp(artist,cur->artist)==0&&strcmp(name,cur->name)==0){
       printf("this song is already in the list\n");

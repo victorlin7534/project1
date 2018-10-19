@@ -53,7 +53,7 @@ int main(){
   add(library,"black","steve");
   add(library,"king","john");
   add(library,"yak","me");
-  add(library,"wonderful","michael");
+  add(library,"wonderful","michael jackson");
   add(library,"blehhh","elton");
   add(library,"sick","seal");
   add(library,"under the sea","jesus");
