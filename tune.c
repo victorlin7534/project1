@@ -35,8 +35,17 @@ struct song *  add_song(char *name, char *artist,struct song *cur){
 
 void show_songs(struct song *cur){
   int i;
-  for(i=1;cur;cur=cur->next,i++)
+  for(i=1;!cur;cur=cur->next,i++)
     printf("%d) %s by %s\n",i,cur->name,cur->artist);
+}
+
+void showa_songs(struct song *cur, char *artist){
+  int i=1;
+  while(cur){
+    if(strcmp(cur->artist,artist)==0)
+      printf("%d) %s by %s\n",i,cur->name,cur->artist);
+      i++;
+  }
 }
 
 struct song *  clear_songs(struct song *cur){
