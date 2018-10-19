@@ -12,7 +12,7 @@ int main(){
   first = add_song("black","steve",first);
   first = add_song("king","john",first);
   first = add_song("yak","me",first);
-  first = add_song("wonderful dumplings","michael jackson",first);
+  first = add_song("wonderful","michael",first);
   first = add_song("blehhh","elton",first);
 
   printf("\nshowing songs\n");show_songs(first);
@@ -53,11 +53,11 @@ int main(){
   add(library,"black","steve");
   add(library,"king","john");
   add(library,"yak","me");
-  add(library,"wonderful dumplings","michael jackson");
+  add(library,"wonderful","michael");
   add(library,"blehhh","elton");
   add(library,"sick","seal");
   add(library,"under the sea","jesus");
-  add(library,"apple","your neighbor");
+  add(library,"apple","your mom");
   add(library,"flaking","o");
   add(library,"god","pops");
   add(library,"hello","emily");

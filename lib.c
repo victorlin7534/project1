@@ -71,7 +71,7 @@ struct song * fsong(struct song * library[], char *name, char *artist){
 }
 
 void add(struct song * library[], char *name, char *artist){
-  if(artist[0] < 'a' || artist[0] > 'z') 
+  if(artist[0] < 'a' || artist[0] > 'z') //WEIRD
    library[artist[26]] = add_song(name,artist,library[26]);
   else
    library[artist[0]-97] = add_song(name,artist,library[artist[0]-97]);
